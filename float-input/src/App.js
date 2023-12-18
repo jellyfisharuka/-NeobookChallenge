@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useEffect } from 'react';
 import axios from 'axios';
-
+import Register from './components/Register';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
   function App() {
     useEffect(() => {
       const getData = async () => {
@@ -18,8 +19,16 @@ import axios from 'axios';
       getData();
     }, []);
     return (
+      <Routes>
+      <Route path="/" element={<Layout />}>
+        {/* public routes */}
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        </Route>
+        </Routes>
       <div className="box-form">
         <div className="left">
+        
           <div className="overlay"></div>
         </div>
         <div className="right" style={{ height: '100%' }}>
