@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import Register from './components/Register';
+import Register from './components/register_auth';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
   function App() {
     useEffect(() => {
