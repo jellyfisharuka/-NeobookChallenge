@@ -2,9 +2,32 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+
 import Register from './components/register_auth';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-  function App() {
+ 
+function App() {
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          'https://neobook.online/mobi-market/swagger/'
+        );
+        console.log(response.data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    getData();
+  }, []);
+
+  const YourComponent = () => {
+    const handleLogin = () => {
+      // Ваша логика проверки логина и пароля
+      // Если вход не прошел успешно, показываем сообщение об ошибке
+      toast.error('Неправильный логин или пароль');
+    };
     useEffect(() => {
       const getData = async () => {
         try {
@@ -17,6 +40,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
         }
       };
       getData();
+
+      
     }, []);
     return (
       <><Routes>
@@ -45,7 +70,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
               <p>Forgot password?</p>
             </div>
             <br />
-            <button>Login</button>
+            <button>Login</button>// 
           </div>
         </div></>
     );
