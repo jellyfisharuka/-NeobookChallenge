@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useFormik } from 'formik';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { PageOne, PageTwo } from './components/Pages';
 function App() {
   const formik = useFormik({
     initialValues: {
@@ -14,11 +15,12 @@ function App() {
         const response = await axios.post('https://neobook.online/mobi-market/swagger/', values);
         console.log('Ответ сервера:', response.data);
 
-        // Здесь можно добавить логику успешного входа
+        toast.error('Ошибка входа. Попробуйте еще раз.');
       } catch (error) {
         console.error('Ошибка при отправке данных:', error);
         toast.error('Ошибка входа. Попробуйте еще раз.');
       }
+      toast.error('Ошибка входа. Попробуйте еще раз.');
     },
   });
 
@@ -58,7 +60,14 @@ function App() {
           <button type="submit">Login</button> {/* Добавляем кнопку отправки формы */}
         </div>
       </form>
+      <BrowserRouter>
+      <Routes>
+        <Route path="one" element={<PageOne />} />
+        <Route path="two" element={<PageTwo />} />
+      </Routes>
+    </BrowserRouter>
     </div>
+    
   );
 }
 
