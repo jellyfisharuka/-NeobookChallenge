@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { useFormik } from 'formik';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { PageOne, PageTwo } from './components/Pages';
+import { PageThree, PageFour } from './components/Pages';
 function App() {
   const formik = useFormik({
     initialValues: {
@@ -64,6 +65,8 @@ function App() {
       <Routes>
         <Route path="one" element={<PageOne />} />
         <Route path="two" element={<PageTwo />} />
+        <Route path="third" element={<PageThree />} />
+        <Route path="fourth" element={<PageFour />} />
       </Routes>
     </BrowserRouter>
     </div>
