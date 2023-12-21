@@ -15,7 +15,7 @@ export default function Appl() {
           <Route index element={<Home />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} />
+          <Route path="*" element={<NoPage />}/>
         </Route>
       </Routes>
     </BrowserRouter>
