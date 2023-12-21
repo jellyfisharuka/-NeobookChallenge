@@ -101,12 +101,13 @@ body {
   box-shadow: 0px 4px 20px 0px #d9dcd7d8;
   background-image: linear-gradient(135deg, #97a097 10%, #9aa398 100%);
 }
-.inputs1 {
+.inputs {
   display: flex;
-flex-direction: column;
-min-width: 350px;
+  flex-direction: column;
+  min-width: 350px;
 }
-.inputs1 input {
+
+.inputs input {
   width: 100%;
   height: 100%;
   padding: 14px 16px 0 10px;
@@ -117,7 +118,8 @@ min-width: 350px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
 }
-.inputs1 label {
+
+.inputs label {
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
   padding: 0 12px;
@@ -129,43 +131,10 @@ min-width: 350px;
   transition: all 0.2s ease-out;
 }
 
-.inputs1:focus-within label {
+.inputs:focus-within label {
   transform: translate(0, 12px) scale(0.75);
-}
-.inputs1 .Active {
-  transform: translate(0, 12px) scale(0.75);
-}
-.inputs2 {
-  display: flex;
-flex-direction: column;
-min-width: 350px;
-}
-.inputs2 input {
-  width: 100%;
-  height: 100%;
-  padding: 14px 16px 0 10px;
-  outline: 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
-.inputs2 label {
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 0 12px;
-  color: #999;
-  pointer-events: none;
-  position: absolute;
-  transform: translate(0, 26px) scale(1);
-  transform-origin: top left;
-  transition: all 0.2s ease-out;
 }
 
-.inputs2:focus-within label {
-  transform: translate(0, 12px) scale(0.75);
-}
-.inputs2 .Active {
+.inputs .Active {
   transform: translate(0, 12px) scale(0.75);
 }
