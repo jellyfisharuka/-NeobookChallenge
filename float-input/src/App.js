@@ -64,14 +64,7 @@ function App() {
           <button type="submit">Login</button> {/* Добавляем кнопку отправки формы */}
         </div>
       </form>
-      <BrowserRouter>
-      <Routes>
-        <Route path="one" element={<PageOne />} />
-        <Route path="two" element={<PageTwo />} />
-        <Route path="third" element={<PageThree />} />
-        <Route path="fourth" element={<PageFour />} />
-      </Routes>
-    </BrowserRouter>
+     
     </div>
     
   );
