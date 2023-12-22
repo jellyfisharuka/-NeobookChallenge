@@ -36,25 +36,27 @@ function App() {
           <h5></h5>
           <p><a href="#"></a></p>
           <div className="inputs1">
-            <input
-              type="text"
-              name="username"
-              value={formik.values.username}
-              onChange={formik.handleChange}
-            />
-            <label htmlFor="text">Username</label>
-            <br />
-          </div>
-          <div className="inputs2">
-            <input
-              type="password"
-              name="password"
-              value={formik.values.password}
-              onChange={formik.handleChange}
-            />
-            <label htmlFor="password">Password</label>
-            <br />
-          </div>
+          <label htmlFor="username">Username</label>
+         <input
+          type="text"
+         id="username"
+         name="username"
+         value={formik.values.username}
+         onChange={formik.handleChange}
+         />
+         <br />
+         </div>
+         <div className="inputs2">
+  <label htmlFor="password">Password</label>
+  <input
+    type="password"
+    id="password"
+    name="password"
+    value={formik.values.password}
+    onChange={formik.handleChange}
+  />
+  <br />
+</div>
           <div className="remember-me--forget-password">
             <p>Forgot password?</p>
           </div>
