@@ -6,7 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import Layout from "./components/Layout";
 import NoPage from "./components/NoPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { store } from './app/store'
+import { Provider } from 'react-redux'
 export default function Appl() {
   return (
     <BrowserRouter>
@@ -29,7 +30,12 @@ root.render(
   </React.StrictMode>
   
 );
-
+//ReactDOM.render(
+  //<Provider store={store}>
+    //<App />
+  //</Provider>,
+  //document.getElementById('root')
+//)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
