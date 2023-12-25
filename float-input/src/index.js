@@ -22,6 +22,41 @@ export default function Appl() {
     </BrowserRouter>
   );
 }
+const schema = Yup.object().shape({
+  username: Yup.string().required().minLength(3).maxLength(25),
+  email: Yup.string().email().required(),
+  password: Yup.string().required().minLength(8).maxLenght(25),
+});
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const formData = {
+    username: e.target.username.value,
+    email: e.target.email.value,
+    password: e.target.password.value,
+  };
+
+  const errors = schema.validate(formData);
+
+  if (errors.length > 0) {
+    // There are errors in the form data
+    alert(errors.join("\n"));
+  } else {
+    // The form data is valid, do something with it
+  }
+};
+
+const App = () => {
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" name="username" placeholder="Username" />
+      <input type="email" name="email" placeholder="Email" />
+      <input type="password" name="password" placeholder="Password" />
+      <button type="submit">Create Account</button>
+    </form>
+  );
+};
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
